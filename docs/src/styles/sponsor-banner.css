@@ -1,0 +1,88 @@
+.custom__sponsor-banner {
+  clear: both;
+  display: flex;
+  flex-grow: 1;
+  margin-block: auto;
+  justify-content: end;
+}
+
+.custom__sponsor-banner a {
+  position: relative;
+  display: inline-block;
+}
+
+.custom__sponsor-banner a span {
+  position: absolute;
+  top: 0.65rem;
+  right: -0.5rem;
+  background-color: #ffd700; /* Dourado */
+  color: #000;
+  font-size: 0.55rem;
+  font-weight: bold;
+  padding: 0.1rem 0.25rem;
+  text-transform: uppercase;
+  border-radius: 0.25rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.custom__sponsor-banner a img {
+  object-fit: contain;
+  display: flex;
+  margin-block: auto;
+  border-radius: 0.25rem;
+}
+
+@media screen and (max-width: 1151px) {
+  .custom__sponsor-banner {
+    visibility: hidden;
+    clear: both;
+    float: left;
+    display: none;
+  }
+}
+
+.custom__sponsor-banner--mobile {
+  clear: both;
+  display: flex;
+  flex-grow: 1;
+  margin-block: auto;
+  justify-content: end;
+}
+
+.custom__sponsor-banner--mobile a {
+  position: relative;
+  display: inline-block;
+}
+
+.custom__sponsor-banner--mobile a span {
+  position: absolute;
+  top: 0.4rem;
+  right: -0.5rem;
+  background-color: #ffd700; /* Dourado */
+  color: #000;
+  font-size: 0.5rem;
+  font-weight: bold;
+  padding: 0.1rem 0.2rem;
+  text-transform: uppercase;
+  border-radius: 0.25rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.custom__sponsor-banner--mobile a img {
+  margin: 0;
+  object-fit: contain;
+  display: flex;
+  margin-block: auto;
+  border-radius: 0.25rem;
+}
+
+@media screen and (min-width: 1151px) {
+  .custom__sponsor-banner--mobile {
+    visibility: hidden;
+    clear: both;
+    float: left;
+    display: none;
+  }
+}

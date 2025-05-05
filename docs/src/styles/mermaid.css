@@ -1,0 +1,6 @@
+.mermaid {
+  display: flex;
+  justify-content: center;
+  background-color: #f9fafb;
+  padding-block: calc(0.5rem * 2);
+}

@@ -1,0 +1,19 @@
+{
+  "service": "dipend-docs-devcontainer",
+  "dockerComposeFile": "docker-compose.yaml",
+  "workspaceFolder": "/workspaces/dipend-docs",
+  "remoteUser": "vscode",
+  "containerEnv": {
+    "SHELL": "/bin/bash"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "astro-build.astro-vscode",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "redhat.vscode-yaml"
+      ]
+    }
+  }
+}

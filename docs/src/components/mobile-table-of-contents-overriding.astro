@@ -1,0 +1,23 @@
+---
+import Default from '@astrojs/starlight/components/MobileTableOfContents.astro';
+import { SponsorBanner } from './sponsor-banner';
+---
+
+<Default><slot /></Default>
+
+<div id="custom__sponsor-banner--mobile" class="custom__sponsor-banner--mobile" style="display: none;">
+  <SponsorBanner isMobile={true} client:only/>
+</div>
+
+<script type="module">
+  document.addEventListener('DOMContentLoaded', () => {
+    const targetSpan = document.querySelector('span.display-current');
+    const sponsorBanner = document.getElementById('custom__sponsor-banner--mobile');
+
+    if (targetSpan && sponsorBanner) {
+      targetSpan.insertAdjacentElement('afterend', sponsorBanner);
+      sponsorBanner.style.display = 'flex';
+    }
+  });
+</script>
+
