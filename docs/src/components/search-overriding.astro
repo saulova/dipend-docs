@@ -1,0 +1,9 @@
+---
+import Default from '@astrojs/starlight/components/Search.astro';
+import { SponsorBanner } from "./sponsor-banner"
+---
+
+<Default><slot /></Default>
+<div id="custom__sponsor-banner" class="custom__sponsor-banner">
+  <SponsorBanner client:only/>
+</div>

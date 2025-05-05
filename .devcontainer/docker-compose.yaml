@@ -1,0 +1,13 @@
+services:
+  dipend-docs-devcontainer:
+    build:
+      context: .
+    volumes:
+      - ../:/workspaces/dipend-docs:cached
+    networks:
+      - dipend-docs-devcontainer
+    user: vscode
+
+networks:
+  dipend-docs-devcontainer:
+    driver: bridge

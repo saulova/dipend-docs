@@ -1,0 +1,39 @@
+name: Question / Support Request ❓
+description: Ask a question or request support regarding Dipend documentation
+title: "[Question]: "
+labels: ["Question", "Triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        # Need Help?
+        We're happy to help! Please make sure your question is clear and complete.
+  - type: markdown
+    attributes:
+      value: |
+        ## Before Asking
+        - Search the [documentation](https://dipend.sauloalvarenga.dev.br) for possible answers.
+        - Check [existing issues](https://github.com/saulova/dipend-docs/issues) to avoid duplicates.
+        - Remember that GitHub Issues are for development-related questions. For general discussions, consider opening a topic in the community forum (coming soon).
+  - type: input
+    id: question-summary
+    attributes:
+      label: Summary
+      description: A short, one-line summary of your question or issue.
+    validations:
+      required: true
+  - type: textarea
+    id: full-question
+    attributes:
+      label: Full Question / Support Request
+      description: Provide a detailed description of your question or the support you need.
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ## Thank You!
+
+        Thank you for reaching out! We'll do our best to assist you 🙌

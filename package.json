@@ -1,0 +1,20 @@
+{
+  "name": "dipend-docs-repo",
+  "private": true,
+  "version": "0.0.0",
+  "author": "Saulo Alvarenga",
+  "license": "Apache-2.0",
+  "type": "module",
+  "workspaces": [
+    "docs",
+    "scripts"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w dipend-docs",
+    "preview": "npm run build -w dipend-docs && wrangler pages dev ./docs/dist --compatibility-date=2025-05-04 --ip=127.0.0.1",
+    "deploy": "npm run build -w dipend-docs && wrangler pages deploy ./docs/dist --project-name dipend-docs"
+  },
+  "devDependencies": {
+    "wrangler": "4.14.1"
+  }
+}
