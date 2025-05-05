@@ -14,6 +14,7 @@ export default defineConfig({
     react(),
     starlight({
       title: "My Docs",
+      favicon: "/favicon.svg",
       logo: {
         light: "./src/assets/logo-light.png",
         dark: "./src/assets/logo-dark.png",
