@@ -20,7 +20,7 @@ export default defineConfig({
         dark: "./src/assets/logo-dark.png",
         replacesTitle: true,
       },
-      social: [{ icon: "github", label: "GitHub", href: "https://github.com/withastro/starlight" }],
+      social: [{ icon: "npm", label: "NPM", href: "https://www.npmjs.com/package/dipend" }],
       customCss: [
         "./src/styles/color-theme.css",
         "./src/styles/mermaid.css",
