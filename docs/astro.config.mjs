@@ -37,6 +37,10 @@ export default defineConfig({
           autogenerate: { directory: "typescript" },
         },
         {
+          label: "Python",
+          autogenerate: { directory: "python" },
+        },
+        {
           label: "Core Concepts",
           autogenerate: { directory: "core-concepts" },
         },

@@ -33,7 +33,7 @@ Let's see an example below:
 
 #### Without DI
 
-```typescript title="report-service.ts"
+```typescript title="TypeScript"
 // Without DI: Tight coupling makes it hard to switch implementations
 class ReportService {
   private exporter = new PDFExporter(); // Hardcoded dependency
@@ -44,19 +44,38 @@ class ReportService {
 }
 ```
 
+```python title="Python"
+# Without DI: Tight coupling makes it hard to switch implementations
+class ReportService:
+    def __init__(self):
+        self._exporter = PDFExporter()
+
+    def generateReport(self):
+        return self._exporter.export()
+```
+
 #### With DI
 
-```typescript title="report-service.ts"
+```typescript title="TypeScript"
 // With DI: Flexibility to inject any exporter (PDF, Excel, CSV)
 class ReportService {
   constructor(private exporter: IReportExporter) {}
 }
-```
 
-```typescript title="app.ts"
 // Usage Example
 const csvService = new ReportService(new CSVExporter());
 const pdfService = new ReportService(new PDFExporter());
+```
+
+```python title="Python"
+# With DI: Flexibility to inject any exporter (PDF, Excel, CSV)
+class ReportService:
+    def __init__(self, exporter: IReportExporter):
+        self._exporter = exporter
+
+# Usage Example
+csv_service = ReportService(CSVExporter())
+pdf_service = ReportService(PDFExporter())
 ```
 
 ### Key Benefits
