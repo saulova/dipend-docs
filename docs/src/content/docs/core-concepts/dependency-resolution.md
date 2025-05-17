@@ -20,7 +20,7 @@ This model guarantees a safe, predictable and efficient resolution order, which 
 
 ### Resolution Flow
 
-When you call `getDependency` or `resolveSingletons`, Dipend performs:
+When you call `get dependency` or `resolve singletons`, Dipend performs:
 
 - Graph construction for the dependency tree of App.
 - Topological sort of the nodes to determine creation order.
@@ -33,7 +33,7 @@ This ensures your app is wired safely and correctly, every time.
 
 Consider the following classes:
 
-```typescript
+```ts title=TypeScript
 class Logger {}
 
 class Database {
@@ -43,6 +43,20 @@ class Database {
 class UserService {
   constructor(private db: Database, private logger: Logger) {}
 }
+```
+
+```python title=Python
+class Logger:
+    pass
+
+class Database:
+    def __init__(self, logger: Logger):
+        self._logger = logger
+
+class UserService:
+    def __init__(self, db: Database, logger: Logger):
+        self._db = db
+        self._logger = logger
 ```
 
 Dipend builds a graph like this:
