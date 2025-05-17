@@ -42,17 +42,16 @@ npx dipend init
 npm install
 ```
 
-### Install and Initialize
-
-```bash
-npx dipend init
-npm install
-```
-
 This will:
 
 - Add `dipend` to your `package.json`
 - Update your `tsconfig.json` with the required options
+
+**Optional**: If you want to visualize your dependency graph in a browser, install dipend-graph:
+
+```bash
+npm install dipend-graph
+```
 
 ### When You Run `npx dipend init`:
 
@@ -122,14 +121,36 @@ import { DependencyContainer } from "dipend";
 import { ILogger, ConsoleLogger } from "./logger";
 import { Greeter } from "./greeter";
 
-const container = new DependencyContainer();
+const dependencyContainer = new DependencyContainer();
 
-container.addSingleton<ILogger, ConsoleLogger>();
-container.addTransient<Greeter>();
+dependencyContainer.addSingleton<ILogger, ConsoleLogger>();
+dependencyContainer.addTransient<Greeter>();
 
-container.buildSingletons();
+dependencyContainer.buildSingletons();
 
-const greeter = container.getDependency<Greeter>();
+const greeter = dependencyContainer.getDependency<Greeter>();
+console.log(greeter.greet("World"));
+```
+
+With Graph Visualization (Optional):
+
+```ts title="index.ts" ins={2,13-14}
+import { DependencyContainer } from "dipend";
+import { DipendGraphServer } from "dipend-graph";
+import { ILogger, ConsoleLogger } from "./logger";
+import { Greeter } from "./greeter";
+
+const dependencyContainer = new DependencyContainer();
+
+dependencyContainer.addSingleton<ILogger, ConsoleLogger>();
+dependencyContainer.addTransient<Greeter>();
+
+dependencyContainer.buildSingletons();
+
+const dipendGraphServer = new DipendGraphServer(dependencyContainer);
+dipendGraphServer.start();
+
+const greeter = dependencyContainer.getDependency<Greeter>();
 console.log(greeter.greet("World"));
 ```
 
