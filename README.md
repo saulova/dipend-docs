@@ -6,7 +6,7 @@ The site is built to help users understand, install, and contribute to the proje
 
 ## 🌐 Live Site
 
-- [Dipend docs](https://your-docs-site-url.com)
+- [Dipend docs](https://dipend.sauloalvarenga.dev.br)
 
 ## 🛠️ Tech Stack
 
