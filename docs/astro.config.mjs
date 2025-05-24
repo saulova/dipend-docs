@@ -20,7 +20,10 @@ export default defineConfig({
         dark: "./src/assets/logo-dark.png",
         replacesTitle: true,
       },
-      social: [{ icon: "npm", label: "NPM", href: "https://www.npmjs.com/package/dipend" }],
+      social: [
+        { icon: "npm", label: "NPM", href: "https://www.npmjs.com/package/dipend" },
+        { icon: "seti:python", label: "PyPI", href: "https://pypi.org/project/dipend/" },
+      ],
       customCss: [
         "./src/styles/color-theme.css",
         "./src/styles/mermaid.css",
